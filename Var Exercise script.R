@@ -20,10 +20,14 @@ RBOBVar99<-(VaR(RBOBreturns,p=0.99,method="historical")*100)#Value at Risk at 99
 RBOBVar95<-(VaR(RBOBreturns,p=0.95, method = "historical")*100) #Value at risk at 95% Confidence
 RBOBvar90<-(VaR(RBOBreturns,p=0.90,method = "historical")*100) #value at risk at 90% confidence
 RBOBvarmatrix<-cbind(RBOBvar90,RBOBVar95,RBOBVar99)
-colnames(RBOBvarmatrix)<-c("var90","Var95","Var99")#creating head
+colnames(RBOBvarmatrix)<-c("RBOBVar90","RBOBVar95","RBOBVar99")#creating head
 RBOBvarmatrix
 #write.csv(varmatrix,file = "VAR of stock") #exporting
 barplot(RBOBvarmatrix)
+
+#RBOBVar90 RBOBVar95 RBOBVar99
+#VaR -2.604451 -3.792386 -6.874903
+
 
 hist(RBOBreturns)
 
@@ -37,10 +41,15 @@ HOVar99<-(VaR(HOreturns,p=0.99,method="historical")*100)#Value at Risk at 99% Co
 HOVar95<-(VaR(HOreturns,p=0.95, method = "historical")*100) #Value at risk at 95% Confidence
 HOvar90<-(VaR(HOreturns,p=0.90,method = "historical")*100) #value at risk at 90% confidence
 HOvarmatrix<-cbind(HOvar90,HOVar95,HOVar99)
-colnames(HOvarmatrix)<-c("var90","Var95","Var99")#creating head
+colnames(HOvarmatrix)<-c("HOVar90","HOVar95","HOVar99")#creating head
 HOvarmatrix
 #write.csv(varmatrix,file = "VAR of stock") #exporting
 barplot(HOvarmatrix)
+
+
+#HOVar90   HOVar95   HOVar99
+#VaR -2.415023 -3.409521 -5.472751
+
 
 hist(HOreturns)
 
@@ -54,9 +63,12 @@ CLVar99<-(VaR(CLreturns,p=0.99,method="historical")*100)#Value at Risk at 99% Co
 CLVar95<-(VaR(CLreturns,p=0.95, method = "historical")*100) #Value at risk at 95% Confidence
 CLvar90<-(VaR(CLreturns,p=0.90,method = "historical")*100) #value at risk at 90% confidence
 CLvarmatrix<-cbind(CLvar90,CLVar95,CLVar99)
-colnames(CLvarmatrix)<-c("var90","Var95","Var99")#creating head
+colnames(CLvarmatrix)<-c("CLVar90","CLVar95","CLVar99")#creating head
 CLvarmatrix
 #write.csv(varmatrix,file = "VAR of stock") #exporting
 barplot(CLvarmatrix)
+
+#CLVar90   CLVar95   CLVar99
+#VaR -2.627332 -3.696329 -6.010293
 
 hist(CLreturns)
